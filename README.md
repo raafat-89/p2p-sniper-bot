@@ -1,32 +1,52 @@
-# ?? بوت مراقبة أسعار P2P على باينانس
+# ?? P2P Crypto Alert Bot
 
-هذا المشروع عبارة عن بوت بلغة Python يقوم بمراقبة إعلانات البيع على منصة Binance P2P وينبّه المستخدم على تيليغرام في حال ظهور إعلان بيع بسعر أقل من سعر السوق بنسبة معينة.
-
----
-
-## ?? الميزات
-
-- مراقبة مستمرة لأزواج محددة من العملات الرقمية مقابل العملات الورقية.
-- تنبيه فوري على تيليغرام عند تحقق الشروط:
-  - الإعلان بخصم 5% أو أكثر عن السعر الفوري.
-  - عمر الإعلان أقل من 60 ثانية.
-- إرسال تقرير دوري كل 5 دقائق.
+A Telegram bot that monitors Binance P2P ads for large discounts on selected crypto/fiat pairs and sends instant alerts when deals are detected.
 
 ---
 
-## ⚙️ المتطلبات
+## ✅ Features
 
-- Python 3.11 أو أحدث
-- مكتبات:
-  - `python-telegram-bot`
-  - `requests`
-  - `nest_asyncio`
+- Monitors real-time Binance P2P ads.
+- Sends Telegram alerts when:
+  - Discount ≥ 5% from market price
+  - Ad age < 60 seconds
+- Simple setup using Python and `requests`
+- Easy to extend (add new platforms, coins, filters, etc.)
 
 ---
 
-## ?? طريقة التشغيل
+## ⚙️ Installation
 
-1. تثبيت المتطلبات:
+### 1. Connect to your VPS and clone the repo:
 
 ```bash
+cd /root
+git clone https://github.com/raafat-89/p2p-sniper-bot.git
+cd p2p-sniper-bot
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
+python3 src/bot.pycat >> README.md << 'EOF'
+
+---
+
+## ✉️ Example Alert (Telegram)
+cat >> README.md << 'EOF'
+
+---
+
+## ✉️ Example Alert (Telegram)
+---
+
+## ?? To-do / Suggestions
+
+- [ ] Auto-start bot on reboot using `tmux` or `systemd`
+- [ ] Add support for Bybit, KuCoin P2P
+- [ ] Create a config file (e.g. `config.py`)
+- [ ] Improve message formatting
+
+---
+
+## ?? License
+
+MIT License
